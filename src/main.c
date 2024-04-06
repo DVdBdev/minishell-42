@@ -6,33 +6,35 @@
 /*   By: dvan-den <dvan-den@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:34:56 by dvan-den          #+#    #+#             */
-/*   Updated: 2024/04/03 18:47:25 by dvan-den         ###   ########.fr       */
+/*   Updated: 2024/04/06 18:25:36 by dvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <readline/readline.h>
-#include <readline/history.h>
+#include "../inc/minishell.h"
 
-int	main(void)
+void	free_all(void)
 {
-	char	*input;
+	free(g_data->input);
+	free(g_data);
+}
 
-	while (1)
+//TODO: no printf
+//TODO: make exit function (ctrl-d)
+//TODO: Can I free input when input is NULL lol
+int	main(int argc, char *argv[], char *env[])
+{
+	g_data = malloc(sizeof(t_data));
+	init(argc, argv, env);
+	while(g_data->status)
 	{
-		input = readline("\033[1;36mminishell \033[1;35m$ \033[0m");
-		if (!input)
-			break ;
-		if (strcmp(input, "exit") == 0)
+		g_data->input = readline("$> ");
+		if (g_data->input == NULL)
 		{
-			free(input);
-			break ;
+			free_all();
+			printf("exit\n");
+			exit(0);
 		}
-		printf("\tYou typed: %s\n", input);
-		add_history(input);
-		free(input);
+		add_history(g_data->input);
+		parsing_input();
 	}
-	return (0);
 }
