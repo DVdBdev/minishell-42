@@ -6,11 +6,13 @@
 /*   By: dvan-den <dvan-den@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:34:56 by dvan-den          #+#    #+#             */
-/*   Updated: 2024/04/06 18:25:36 by dvan-den         ###   ########.fr       */
+/*   Updated: 2024/04/07 15:07:02 by dvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
+
+t_data	*g_data;
 
 void	free_all(void)
 {
@@ -35,6 +37,6 @@ int	main(int argc, char *argv[], char *env[])
 			exit(0);
 		}
 		add_history(g_data->input);
-		parsing_input();
+		//parsing_input();
 	}
 }

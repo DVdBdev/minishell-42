@@ -11,20 +11,20 @@
 # include <signal.h>
 # include <sys/wait.h>
 
-typedef struct	s_qlist
-{
-	char			*str;
-	int				type;
-	struct s_qlist	*next;
-}	t_qlist;
+// typedef struct	s_qlist
+// {
+// 	char			*str;
+// 	int				type;
+// 	struct s_qlist	*next;
+// }	t_qlist;
 
-typedef struct	s_ms
-{
-	char		**words
-	int			type;
-	int			size;
-	struct s_ms	*next;
-}	t_ms;
+// typedef struct	s_ms
+// {
+// 	char		**words;
+// 	int			type;
+// 	int			size;
+// 	struct s_ms	*next;
+// }	t_ms;
 
 typedef struct	s_data
 {
