@@ -2,6 +2,7 @@
 # define MINISHELL_H
 
 # include <stdio.h>
+# include "../libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
@@ -11,12 +12,12 @@
 # include <signal.h>
 # include <sys/wait.h>
 
-// typedef struct	s_qlist
-// {
-// 	char			*str;
-// 	int				type;
-// 	struct s_qlist	*next;
-// }	t_qlist;
+typedef struct	s_qlist
+{
+	char			*str;
+	int				type;
+	struct s_qlist	*next;
+}	t_qlist;
 
 // typedef struct	s_ms
 // {
