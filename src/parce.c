@@ -6,7 +6,7 @@
 /*   By: dvan-den <dvan-den@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 16:33:54 by dvan-den          #+#    #+#             */
-/*   Updated: 2024/04/07 16:49:14 by dvan-den         ###   ########.fr       */
+/*   Updated: 2024/04/07 19:31:00 by dvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ void	parse_input(void)
 {
 	g_data->input = ft_strtrim(g_data->input, " ");
 	g_data->input = add_space_to_front();
+	fill_qlist();
 }

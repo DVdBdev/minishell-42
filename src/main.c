@@ -6,7 +6,7 @@
 /*   By: dvan-den <dvan-den@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:34:56 by dvan-den          #+#    #+#             */
-/*   Updated: 2024/04/07 15:07:02 by dvan-den         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:54:00 by dvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char *argv[], char *env[])
 {
 	g_data = malloc(sizeof(t_data));
 	init(argc, argv, env);
-	while(g_data->status)
+	while (g_data->status)
 	{
 		g_data->input = readline("$> ");
 		if (g_data->input == NULL)
